@@ -1,0 +1,5 @@
+post request som uploader databasen til clientens computer
+
+inputfield
+funtion som lavder det om til en querry
+funktion som qurrier databasen

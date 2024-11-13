@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { MongoClient } = require("mongodb");
 
 const app = express();
 app.use(express.json());
@@ -18,9 +19,33 @@ const arr = [{
 
 
 app.get('/hello', (req, res) => {
-    res.send(arr)
+    res.send(const MongoClient = require("mongodb");
+    const client = new MongoClient(uri);
+
+    const database = client.db('fitness');
+    const machines = database.collection('machines');
+
+// Query for a movie that has the title 'Back to the Future'
+    const query = { navn: 'Kaj' };
+    const machine = machines.findOne(query);
+
+    console.log(machine);
+)
 })
 
+
+
+const { MongoClient } = require("mongodb");
+const client = new MongoClient(uri);
+
+const database = client.db('fitness');
+const machines = database.collection('machines');
+
+// Query for a movie that has the title 'Back to the Future'
+const query = { navn: 'Kaj' };
+const machine = machines.findOne(query);
+
+console.log(machine);
 
 const port = 3000
 
