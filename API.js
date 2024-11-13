@@ -6,20 +6,28 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-let db;
-const client = new MongoClient('mongodb://localhost:27017/local');
+// Replace the uri string with your connection string.
+const uri = "mongodb://localhost:27017/fitness";
 
+const client = new MongoClient(uri);
 
-client.connect()
-    .then(() => {
-        db = client.db(); // Use the connected database
-        console.log('MongoDB connected');
-    })
-    .catch(err => {
-        console.error('MongoDB connection error:', err);
-        process.exit(1);
-    });
+//test function
+async function run() {
+    try {
+        const database = client.db('fitness');
+        const machines = database.collection('machines');
 
+        // Query for a movie that has the title 'Back to the Future'
+        const query = { navn: 'Kaj' };
+        const machine = await machines.findOne(query);
+
+        console.log(machine);
+    } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+}
+run().catch(console.dir);
 
 app.get('/hello', (req, res) => {
     res.send('hello')
