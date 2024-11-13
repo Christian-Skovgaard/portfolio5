@@ -15,8 +15,6 @@ const arr = [{
     ]
 
 
-
-
 app.get('/hello', (req, res) => {
     res.send(arr)
 })
