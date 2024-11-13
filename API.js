@@ -3,13 +3,22 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const obj = {
-    'message':'hello'
-}
+const arr = [{
+    'navn':'træningscykel',
+    'muskelgrupper': [
+        'ben'
+    ]},
+    {'navn':'let_puldown',
+    'muskelgrupper':['ryg','biceps']},
+    {'navn':'armcurl',
+        'muskelgrupper':['biceps']}
+    ]
+
+
 
 
 app.get('/hello', (req, res) => {
-    res.send(obj)
+    res.send(arr)
 })
 
 
