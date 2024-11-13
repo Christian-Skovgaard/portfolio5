@@ -1,1 +1,1 @@
-yes
+//this is a script
