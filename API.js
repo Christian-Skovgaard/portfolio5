@@ -6,22 +6,25 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+let db;
+const client = new MongoClient('mongodb://localhost:27017/local');
+
+
+client.connect()
+    .then(() => {
+        db = client.db(); // Use the connected database
+        console.log('MongoDB connected');
+    })
+    .catch(err => {
+        console.error('MongoDB connection error:', err);
+        process.exit(1);
+    });
+
+
 app.get('/hello', (req, res) => {
-    res.send()
+    res.send('hello')
 })
 
-
-
-const client = new MongoClient(uri);
-
-const database = client.db('fitness');
-const machines = database.collection('machines');
-
-// Query for a movie that has the title 'Back to the Future'
-const query = { navn: 'Kaj' };
-const machine = machines.findOne(query);
-
-console.log(machine);
 
 const port = 3000
 
