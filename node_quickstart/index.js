@@ -1,44 +1,51 @@
+const express = require('express');
+const cors = require('cors');
 const { MongoClient } = require("mongodb");
 
-// Replace the uri string with your connection string.
 const uri = "mongodb://localhost:27017/fitness";
 
 const client = new MongoClient(uri);
-
-//test function
-/*
-async function run() {
-    try {
-        const database = client.db('fitness');
-        const machines = database.collection('machines');
-
-        // Query for a movie that has the title 'Back to the Future'
-        const query = { navn: 'Kaj' };
-        const machine = await machines.findOne(query);
-
-        console.log(machine);
-    } finally {
-        // Ensures that the client will close when you finish/error
-        await client.close();
-    }
-}
-run().catch(console.dir);
-
- */
-
-
-
-
-const express = require('express');
-const cors = require('cors');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 
-app.get('/test', (req, res) => {
+
+app.get('/hello', (req, res) => {
     res.send('omg, den virker!')
+})
+
+app.get('/paramcheck/:param1?/:param2?', (req, res) => {
+    const reqObj = req.params
+    res.send(reqObj.param1)
+})
+
+app.get('/search/:name?/:muskelgruppe?', (req, res) => {
+    //making the parametors in the endpoint into object
+    const reqObj = req.params
+    //makes connection to the database
+    const database = client.db('fitness');
+    const machines = database.collection('machines');
+    //query is the querry we use to search in the findOne function and returns it to the client
+    const query = {navn: `${reqObj.name}`};
+    machines.findOne(query).then(machine => {res.send(machine)})
+})
+
+app.get('/kaj', (req, res) => {
+    const database = client.db('fitness');
+    const machines = database.collection('machines');
+
+    const query = {navn: 'Kaj'};
+    machines.findOne(query).then(machine => {res.send(machine)})
+})
+
+app.get('/test/:param', (req, res) => {
+    const database = client.db('fitness');
+    const machines = database.collection('machines');
+
+    const query = {navn: `${req.params.param}`};
+    machines.findOne(query).then(machine => {res.send(machine)})
 })
 
 
