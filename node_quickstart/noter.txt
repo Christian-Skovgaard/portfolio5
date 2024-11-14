@@ -1,5 +1,8 @@
-post request som uploader databasen til clientens computer
+Jeg tænkter vi laver alt indhold i databasem med småt,
+så brugeren kan skrive i whatever case de vil, og vi så
+kan lave det hele småt.
 
-inputfield
-funtion som lavder det om til en querry
-funktion som qurrier databasen
+endpointstruktur for search api
+/search - path
+/name - en enkelt string
+/muscleArr - bliver formateret til en string som har indexne skilt med et '.'

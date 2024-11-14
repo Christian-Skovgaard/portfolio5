@@ -1,5 +1,6 @@
-/*
-fetch("http://localhost:3000/hello")
-    .then(response => response.json())
-    .then(data => console.log(data))
- */
+function searchDBForMachines (name,muscleArr) {
+    fetch(`http://localhost:3000/search/${name}`)
+        .then(response => response.json())
+        .then(data => {return data})
+}
+
