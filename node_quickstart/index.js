@@ -29,7 +29,7 @@ app.get('/paramcheck/:param1?/:param2?', (req, res) => {
 
 app.get('/search/:name?/:muskelgruppe?', (req, res) => {
     //query is the querry we use to search in the findOne function and returns it to the client
-    const query = {navn: `${req.params.name}`};
+    const query = {name: `${req.params.name}`};
     machines.findOne(query).then(machine => {res.send(machine)})
 })
 
