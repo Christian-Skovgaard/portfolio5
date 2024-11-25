@@ -33,9 +33,31 @@ app.get('/search/:name?/:muskelgruppe?', (req, res) => {
     machines.findOne(query).then(machine => {res.send(machine)})
 })
 
+app.get('/login')
+
+app.post('')
 
 const port = 3000
 
 app.listen(port, ()=>{
     console.log("it's alive!");
 });
+
+
+
+const trainingset = [
+    {
+        id: 1,
+        name: "weights",
+        musclegroup: ['arm','bicpts','wrist'],
+        difficulty: "easy",
+        dangerlevel: "minimal"
+    },
+    {
+        id: 2,
+        name: "rowmachine",
+        musclegroup: ['arm','bicpts','core','abs'],
+        difficulty: "medium",
+        dangerlevel: "minimal"
+    }
+]

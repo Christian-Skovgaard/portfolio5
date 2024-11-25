@@ -1,4 +1,4 @@
-
+//funtionality for seaching
 const getActiveCheckboxArr = () => {
     //function that loops that itterates through all checkboxes and determens withch are checked, then returns as arr
     //denne funktion virker uanset hvor mange filters vi tilføjer fordi den bare tager contetet af vores label for checkboxen, så vi kan bare føje flere til
@@ -17,6 +17,17 @@ const getActiveCheckboxArr = () => {
 
 const getSearchbarContent = () => document.querySelector('#searchbar').value
 
+const getEndpointStringFromArr = (arr) => {
+    let string = ''
+    for (let i = 0; i < arr.length; i++) {
+        string = string + arr[i]
+        if (i !== arr.length-1) {
+            string = string + '.'
+        }
+    }
+    return string
+}
+
 function searchDBForMachines (name,muscleArr) {
     fetch(`http://localhost:3000/search/${name}`)
         .then(response => response.json())
@@ -27,3 +38,4 @@ function logThis () {
     console.log(getSearchbarContent())
 }
 
+//login functionality

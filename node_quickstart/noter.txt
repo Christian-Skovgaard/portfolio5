@@ -6,3 +6,4 @@ endpointstruktur for search api
 /search - path
 /name - en enkelt string
 /muscleArr - bliver formateret til en string som har indexne skilt med et '.'
+
