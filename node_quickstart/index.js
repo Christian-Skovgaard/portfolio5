@@ -21,21 +21,26 @@ app.get('/test', (req, res) => {
     res.send('omg, den virker!')
 })
 
-app.get('/paramcheck/:param1?/:param2?', (req, res) => {
+app.get('/paramcheck/p1=:param1?;p2=:param2?', (req, res) => {
     const reqObj = req.params
     res.send(reqObj)
     console.log(reqObj)
 })
 
-app.get('/search/:name?/:muskelgruppe?', (req, res) => {
+app.get('/search/:name', (req, res) => {
     //query is the querry we use to search in the findOne function and returns it to the client
     const query = {name: `${req.params.name}`};
-    machines.findOne(query).then(machine => {res.send(machine)})
+    machines.findOne(query).then(machine => {
+        res.send(machine)
+        console.log(machine)
+    })
 })
 
-app.get('/login')
+//userDB
 
-app.post('')
+api.get('user/login/:username/:')
+
+
 
 const port = 3000
 
