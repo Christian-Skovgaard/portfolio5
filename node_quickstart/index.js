@@ -27,18 +27,43 @@ app.get('/paramcheck/p1=:param1?;p2=:param2?', (req, res) => {
     console.log(reqObj)
 })
 
-app.get('/search/:name', (req, res) => {
+app.get('/search/old/:name', (req, res) => {
     //query is the querry we use to search in the findOne function and returns it to the client
-    const query = {name: `${req.params.name}`};
+    const query = {name: `${req.params.name}`}
     machines.findOne(query).then(machine => {
         res.send(machine)
         console.log(machine)
     })
 })
 
-//userDB
+//this is the formatting functions. They format strings or arrays into objects that can be pushed to our $and-query. This makes it easy to add more filters in the future.
+function formatString (field, value) { return {[field]: value}}     //the squrebrackets is there because otherwise the key would just be called 'field', and not the varieble, field
 
-api.get('user/login/:username/:')
+function formatArray (field, arr) {
+    const arrayQuery = {$or: []}
+    for (value of arr) {
+        const valueObj = {[field]: `${value}`}
+        arrayQuery.$or.push(valueObj)
+    }
+    return arrayQuery
+}
+
+console.log(formatArray('group',['yes','frø']))
+
+app.get('/search/name=:name?;musclegroup=:musclegroup?;difficulty=:difficulty?', (req, res) => {
+    const query = {$and: []}
+
+    const reqObj = req.params
+    console.log(reqObj)
+    res.send(reqObj)
+})
+
+//$or: [
+//      {musclegroup: "wrist"},
+//      {musclegroup: "core"}
+// ]
+
+//userDB
 
 
 
@@ -48,7 +73,10 @@ app.listen(port, ()=>{
     console.log("it's alive!");
 });
 
-
+const query = {$and: []}
+query.$and.push(2)
+query.$and.push('hej')
+console.log(query)
 
 const trainingset = [
     {
