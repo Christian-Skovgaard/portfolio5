@@ -17,7 +17,7 @@ const getActiveCheckboxArr = () => {
 
 const getSearchbarContent = () => document.querySelector('#searchbar').value
 
-const getEndpointStringFromArr = (arr) => {
+const getAPIStringFromArr = (arr) => {
     let string = ''
     for (let i = 0; i < arr.length; i++) {
         string = string + arr[i]

@@ -40,6 +40,7 @@ app.get('/search/old/:name', (req, res) => {
 function formatString (field, value) { return {[field]: value}}     //the squrebrackets is there because otherwise the key would just be called 'field', and not the varieble, field
 
 function formatArray (field, arr) {
+    //this function makes the arr into an $or funciton so that every keyvalue is searched for idividualy, if we only wanted the machinens that included the filters we could use $all instead
     const arrayQuery = {$or: []}
     for (value of arr) {
         const valueObj = {[field]: `${value}`}
@@ -48,20 +49,33 @@ function formatArray (field, arr) {
     return arrayQuery
 }
 
-console.log(formatArray('group',['yes','frø']))
+const getArrFromAPIString = (str) => str.split('.')     //this function decodes the filter-array from the string, and is the opposite to the getAPIStringFromArr function in the front-end script
+
 
 app.get('/search/name=:name?;musclegroup=:musclegroup?;difficulty=:difficulty?', (req, res) => {
+    //welcome to the temple of the search api! Here we take all the params if they are brought forth and sacrifice them to the formatting functions appropriate to their type. Then, they shall be reincarnated as a new variable to best serve in the image of the all mighty $and-query. And they shall be doomed to eternal servitude in the $and-arrays service!
+    const reqObjParams = req.params
     const query = {$and: []}
+    if (reqObjParams.name) {
+        const formattedName = formatString('name',reqObjParams.name)
+        query.$and.push(formattedName)
+    }
+    if (reqObjParams.musclegroup) {
+        const muscleArr = getArrFromAPIString(reqObjParams.musclegroup)
+        const formattedArr = formatArray('musclegroup',muscleArr)
+        query.$and.push(formattedArr)
+    }
+    if (reqObjParams.difficulty) {
+        const difficultyArr = getArrFromAPIString(reqObjParams.difficulty)
+        const formattedArr = formatArray('difficulty',difficultyArr)
+        query.$and.push(formattedArr)
+    }
 
-    const reqObj = req.params
-    console.log(reqObj)
-    res.send(reqObj)
+    console.log(query)
+    res.send(query)
 })
 
-//$or: [
-//      {musclegroup: "wrist"},
-//      {musclegroup: "core"}
-// ]
+
 
 //userDB
 
@@ -73,10 +87,8 @@ app.listen(port, ()=>{
     console.log("it's alive!");
 });
 
-const query = {$and: []}
-query.$and.push(2)
-query.$and.push('hej')
-console.log(query)
+
+//this is not relevant and is my corner, do not enter!!!
 
 const trainingset = [
     {
@@ -94,3 +106,8 @@ const trainingset = [
         dangerlevel: "minimal"
     }
 ]
+
+//$or: [
+//      {musclegroup: "wrist"},
+//      {musclegroup: "core"}
+// ]
