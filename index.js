@@ -70,9 +70,9 @@ app.get('/search/name=:name?;musclegroup=:musclegroup?;difficulty=:difficulty?',
         const formattedArr = formatArray('difficulty',difficultyArr)
         query.$and.push(formattedArr)
     }
-    machines.findOne(query).then(machine => {
+    machines.find(query).then(machine => {
         console.log(machine)
-        res.send(machine)
+        res.send(query)
     })
     console.log(query)
 })
@@ -90,7 +90,7 @@ app.listen(port, ()=>{
 });
 
 
-//this is not relevant and is my corner, do not enter!!!
+//not relevant
 
 const trainingset = [
     {

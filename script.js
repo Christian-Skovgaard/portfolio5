@@ -1,3 +1,17 @@
+// -- infoTab sidebar --
+
+function updateInfoTap (machineArr) {
+    const infoSectionDom = document.querySelector('#infoTab')
+    let htmlString = ""     //this is the string we are inserting into the html to create the different divs with info
+    for (machine of machineArr) {
+        const divString = `<div>${machine}</div>`
+        htmlString = htmlString + divString
+    }
+    infoSectionDom.innerHTML = htmlString   //finally, we insert the htmlstring into the document
+}
+
+
+
 // -- funtionality for searching --
 const getActiveCheckboxArr = (filterId) => {
     //function that loops that itterates through all checkboxes and determens withch are checked, then returns as arr
@@ -28,16 +42,18 @@ const getAPIStringFromArr = (arr) => {
     return string
 }
 
-
 function searchDBForMachines () {
     const name = getSearchbarContent()
     const mucleArr= getActiveCheckboxArr('mucleFilter')
     const formattetMucleArr = getAPIStringFromArr(mucleArr)
     const difficultyArr= getActiveCheckboxArr('difficultyFilter')
-    const formattetdifficultyArr = getAPIStringFromArr(mucleArr)
+    const formattetdifficultyArr = getAPIStringFromArr(difficultyArr)
     fetch(`http://localhost:3000/search/name=${name};musclegroup=${formattetMucleArr};difficulty=${formattetdifficultyArr}`)
         .then(response => response.json())
-        .then(jsondata => {console.log(jsondata)})
+        .then(jsondata => {
+            console.log(jsondata)
+            updateInfoTap(jsondata)
+        })
 }
 
 document.querySelector('#searchButton').addEventListener('click',searchDBForMachines)
