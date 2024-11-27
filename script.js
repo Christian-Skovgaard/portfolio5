@@ -63,3 +63,50 @@ function logThis () {
 }
 
 //login functionality
+
+
+
+//Checkbox for machines functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all checkboxes and initialize the output variable
+    const checkboxes = document.querySelectorAll('input[name="machine"]');
+    let selectedMachines = [];
+
+    // Function to update the selected machines
+    function updateSelectedMachines() {
+        selectedMachines = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        // Log the selected machines to the console
+        console.log('Selected Machines:', selectedMachines.join(', '));
+
+        // Update the class of machine elements based on selection
+        document.querySelectorAll('.unselectedMachine, .selectedMachine').forEach(element => {
+            const machineType = element.id.replace(/[0-9]/g, ''); // Extract machine type from id
+            if (selectedMachines.includes(machineType)) {
+                element.classList.add('selectedMachine');
+                element.classList.remove('unselectedMachine');
+            } else {
+                element.classList.add('unselectedMachine');
+                element.classList.remove('selectedMachine');
+            }
+        });
+    }
+
+    // Add event listeners to each checkbox
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateSelectedMachines);
+    });
+
+    // Initial update to reflect the current state of checkboxes
+    updateSelectedMachines();
+});
+
+
+
+
+
+
+
+
