@@ -28,7 +28,6 @@ const getAPIStringFromArr = (arr) => {
     return string
 }
 
-console.log(getActiveCheckboxArr('difficultyFilter'))
 
 function searchDBForMachines () {
     const name = getSearchbarContent()
