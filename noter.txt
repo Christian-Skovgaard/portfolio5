@@ -7,3 +7,14 @@ endpointstruktur for search api
 /name - en enkelt string
 /muscleArr - bliver formateret til en string som har indexne skilt med et '.'
 
+
+
+gameplan
+
+der er et html element til hver fitnessøvelse, som har et id som matcher det id som den har i databasen.
+
+
+
+- what to do
+færdige database
+html-kort færdigt
