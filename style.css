@@ -1,22 +1,311 @@
+/*GLOBAL SETTINGS*/
 h1 {
     font: bold 30px/1.5 "Calibri";
     border-bottom: black 10px;
     padding: 10px;
     margin: 0 0 0 0;
 }
-
-.machine {
-    border-color: black;
-    border-width: 5px;
-    color: black;
-    position: relative;
-    top: 40px;
-    left: 25px;
+.unselectedMachine {
+    border: 2px solid black;
+    background-color: transparent;
 }
-
 .selectedMachine {
-
+    border: 2px solid black;
+    background-color: red;
 }
+
+
+
+
+/*ELEMENT SETTINGS BELLOW-----------------------------------*/
+
+/*TREADMILL LOCATIONS-----------------------------------*/
+#treadmill1 {
+    position: relative;
+    bottom: 70px;
+    left: 400px;
+    width: 18px;
+    height: 40px;
+}
+#treadmill2 {
+    position: relative;
+    bottom: 114px;
+    left: 370px;
+    width: 18px;
+    height: 40px;
+}
+#treadmill3 {
+    position: relative;
+    bottom: 158px;
+    left: 340px;
+    width: 18px;
+    height: 40px;
+}
+#treadmill4 {
+    position: relative;
+    bottom: 202px;
+    left: 310px;
+    width: 18px;
+    height: 40px;
+}
+#treadmill5 {
+    position: relative;
+    bottom: 246px;
+    left: 280px;
+    width: 18px;
+    height: 40px;
+}
+
+/*BIKE (NOT BIKESAL) LOCATIONS-----------------------------------*/
+#bike1 {
+    position: relative;
+    bottom: 460px;
+    left: 621px;
+    width: 40px;
+    height: 18px;
+}
+#bike2 {
+    position: relative;
+    bottom: 510px;
+    left: 621px;
+    width: 40px;
+    height: 18px;
+}
+#bike3 {
+    position: relative;
+    bottom: 560px;
+    left: 621px;
+    width: 40px;
+    height: 18px;
+}
+#bike4 {
+    position: relative;
+    bottom: 610px;
+    left: 621px;
+    width: 40px;
+    height: 18px;
+}
+#bike5 {
+    position: relative;
+    bottom: 660px;
+    left: 621px;
+    width: 40px;
+    height: 18px;
+}
+
+/*BIKE (BIKESAL) LOCATIONS-----------------------------------*/
+#bike6 {
+    position: relative;
+    bottom: 823px;
+    left: 405px;
+    width: 18px;
+    height: 40px;
+}
+#bike7 {
+    position: relative;
+    bottom: 867px;
+    left: 375px;
+    width: 18px;
+    height: 40px;
+}
+#bike8 {
+    position: relative;
+    bottom: 911px;
+    left: 345px;
+    width: 18px;
+    height: 40px;
+}
+#bike9 {
+    position: relative;
+    bottom: 955px;
+    left: 315px;
+    width: 18px;
+    height: 40px;
+}
+#bike10 {
+    position: relative;
+    bottom: 999px;
+    left: 285px;
+    width: 18px;
+    height: 40px;
+}
+#bike11 {
+    position: relative;
+    bottom: 1043px;
+    left: 255px;
+    width: 18px;
+    height: 40px;
+}
+#bike12 {
+    position: relative;
+    bottom: 1134px;
+    left: 405px;
+    width: 18px;
+    height: 40px;
+}
+#bike13 {
+    position: relative;
+    bottom: 1178px;
+    left: 375px;
+    width: 18px;
+    height: 40px;
+}
+#bike14 {
+    position: relative;
+    bottom: 1222px;
+    left: 285px;
+    width: 18px;
+    height: 40px;
+}
+#bike15 {
+    position: relative;
+    bottom: 1266px;
+    left: 255px;
+    width: 18px;
+    height: 40px;
+}
+#bike16 {
+    position: relative;
+    bottom: 1356px;
+    left: 405px;
+    width: 18px;
+    height: 40px;
+}
+#bike17 {
+    position: relative;
+    bottom: 1400px;
+    left: 375px;
+    width: 18px;
+    height: 40px;
+}
+#bike18 {
+    position: relative;
+    bottom: 1444px;
+    left: 345px;
+    width: 18px;
+    height: 40px;
+}
+#bike19 {
+    position: relative;
+    bottom: 1488px;
+    left: 315px;
+    width: 18px;
+    height: 40px;
+}
+#bike20 {
+    position: relative;
+    bottom: 1532px;
+    left: 285px;
+    width: 18px;
+    height: 40px;
+}
+#bike21 {
+    position: relative;
+    bottom: 1576px;
+    left: 255px;
+    width: 18px;
+    height: 40px;
+}
+
+/*KETTLEBELLS LOCATION-----------------------------------*/
+#kettlebells1 {
+    position: relative;
+    bottom: 1620px;
+    left: 100px;
+    width: 40px;
+    height: 80px;
+}
+#kettlebells2 {
+    position: relative;
+    bottom: 1703px;
+    left: 585px;
+    width: 80px;
+    height: 20px;
+}
+
+/*CABLETOWER LOCATION-----------------------------------*/
+
+#cabletower {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#handweight {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#legpress {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#stairwalker {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#skiing {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#bench {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#abcrunch {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#chestpress {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#deadlift {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+#seatedrow {
+    position: relative;
+    bottom: 1000px;
+    left: px;
+    width: 40px;
+    height: 18px;
+}
+
+
 
 header>nav {
     display: flex;
