@@ -1,0 +1,125 @@
+[
+
+  {
+    "Exercise":"Lat Pulldown",
+    "Difficulty": "Easy",
+"Risk of injury": "Low",
+    "Muscle Groups": [
+      "upper back",
+      "bicep",
+      "rear delts",
+      "rhomboids",
+      "traps"
+    ]
+},
+
+
+{
+"Exercise":"Arm Curls",
+"Difficulty": "Easy",  
+"Risk of injury": "Low",
+  "Muscle Groups": [
+    "bicep",
+    "forearms"
+  ]
+  },
+
+  {
+    "Exercise": "Bench Press",
+    "Difficulty": "Medium",
+"Risk of injury": "Medium",
+    "Muscle Groups": [
+      "Pectorals",
+      "arms",
+      "shoulders"
+    ]
+  },
+  {
+"Exercise": "Leg press",
+"Difficulty": "Medium",
+"Risk of injury": "Medium",   
+"Muscle Groups": [
+"quads",
+"thighs",
+"glutes",
+"hamstring",
+"calves"
+]
+  },
+
+{
+"Exercise":"Chest Fly",
+"Difficulty": "Easy",
+"Risk of injury": "Low",
+"Muscle Groups": [
+"chest",
+"deltoids",
+"triceps",
+"biceps"
+]
+},
+
+{
+"Exercise": "Rear Delts",
+"Difficulty": "Medium",
+"Risk of injury": "Low",
+"Muscle Groups": [
+"rear deltoids",
+"upper back",
+"trapezius",
+"rhomboids"  
+]
+},
+
+
+{
+"Exercise": "Standard Pushups","Wide Pushups","Diamond Pushups", 
+"Difficulty": "Easy",
+"Risk of injury": "Low",
+"Muscle Groups": [
+"triceps",
+"outer chest",
+"inner chest"
+]
+},
+
+
+
+{
+"Exercise": "Crunches",
+"Diffuculty": "Easy",
+"Risk of injury": "Low",
+"Muscle Groups": [
+"Abdominal",
+"Obliques"
+]
+},
+
+
+
+{
+"Exercise": "Bicycle crunches",
+"Difficulty": "Easy",
+"Risk of injury": "Low",
+"Muscle Groups": [
+"Abdominal",
+"Obliques"
+]
+},
+
+
+
+{
+"Exercise": "Deadlift",
+"Difficulty": "Hard",
+"Risk of injury": "High",
+"Muscle Groups": [
+"Back",
+"Hips"
+]
+}
+
+
+
+]
+
