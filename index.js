@@ -70,11 +70,10 @@ app.get('/search/name=:name?;musclegroup=:musclegroup?;difficulty=:difficulty?',
         const formattedArr = formatArray('difficulty',difficultyArr)
         query.$and.push(formattedArr)
     }
-    machines.find(query).then(machine => {
-        console.log(machine)
-        res.send(query)
+    machines.find(query).toArray().then(machine => {
+        console.log(query)
+        res.send(machine)
     })
-    console.log(query)
 })
 
 
