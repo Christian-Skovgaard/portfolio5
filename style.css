@@ -18,6 +18,15 @@ h1 {
     background-color: red;
     opacity: 50%;
 }
+#machineFilter {
+    width: 110px;
+}
+#toggleButton {
+    display: block;
+    margin: 0 0 10px 10px;
+    width: 90px;
+    border-radius: 10px;
+}
 
 
 

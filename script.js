@@ -1,6 +1,6 @@
 // -- infoTab sidebar --
 
-function updateInfoTap (machineArr) {
+function updateInfoTap(machineArr) {
     const infoSectionDom = document.querySelector('#infoTab')
     let htmlString = ""     //this is the string we are inserting into the html to create the different divs with info
     for (machine of machineArr) {
@@ -9,7 +9,6 @@ function updateInfoTap (machineArr) {
     }
     infoSectionDom.innerHTML = htmlString   //finally, we insert the htmlstring into the document
 }
-
 
 
 // -- funtionality for searching --
@@ -35,18 +34,18 @@ const getAPIStringFromArr = (arr) => {
     let string = ''
     for (let i = 0; i < arr.length; i++) {
         string = string + arr[i]
-        if (i !== arr.length-1) {
+        if (i !== arr.length - 1) {
             string = string + '.'
         }
     }
     return string
 }
 
-function searchDBForMachines () {
+function searchDBForMachines() {
     const name = getSearchbarContent()
-    const mucleArr= getActiveCheckboxArr('mucleFilter')
+    const mucleArr = getActiveCheckboxArr('mucleFilter')
     const formattetMucleArr = getAPIStringFromArr(mucleArr)
-    const difficultyArr= getActiveCheckboxArr('difficultyFilter')
+    const difficultyArr = getActiveCheckboxArr('difficultyFilter')
     const formattetdifficultyArr = getAPIStringFromArr(difficultyArr)
     fetch(`http://localhost:3000/search/name=${name};musclegroup=${formattetMucleArr};difficulty=${formattetdifficultyArr}`)
         .then(response => response.json())
@@ -56,18 +55,17 @@ function searchDBForMachines () {
         })
 }
 
-document.querySelector('#searchButton').addEventListener('click',searchDBForMachines)
+document.querySelector('#searchButton').addEventListener('click', searchDBForMachines)
 
-function logThis () {
+function logThis() {
     console.log(getSearchbarContent())
 }
 
 //login functionality
 
 
-
 //Checkbox for machines functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Select all checkboxes and initialize the output variable
     const checkboxes = document.querySelectorAll('input[name="machine"]');
     let selectedMachines = [];
@@ -103,6 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSelectedMachines();
 });
 
+
+//Collapsing the machine selector checkboxes
+    document.getElementById('toggleButton').addEventListener('click', function() {
+    var content = document.getElementById('filterContent');
+    if (content.style.display === 'none') {
+    content.style.display = 'block';
+    this.textContent = 'Hide list of machines';
+} else {
+    content.style.display = 'none';
+    this.textContent = 'Show list of machines';
+}
+});
 
 
 
