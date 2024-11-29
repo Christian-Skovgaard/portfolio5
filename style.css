@@ -528,3 +528,12 @@ h1 {
 header>nav {
     display: flex;
 }
+
+#mainSection {
+    display: flex;
+}
+
+.infobox {
+    border-radius: 20%;
+    background-color: aliceblue;
+}

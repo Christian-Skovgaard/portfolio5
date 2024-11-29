@@ -1,12 +1,32 @@
 // -- infoTab sidebar --
+function getHTMLListFromArr (arr) {
+    //this function makes a ul-li list for html from an array so that it can be displayed on the document
+    let HTMLString = ''
+    for (item of arr) {
+        HTMLString = HTMLString + `<li>${item}</li>`
+    }
+    HTMLString = '<ul>' + HTMLString + '</ul>'
+    return HTMLString
+}
+
 
 function updateInfoTap(machineArr) {
     const infoSectionDom = document.querySelector('#infoTab')
     let htmlString = ""     //this is the string we are inserting into the html to create the different divs with info
     for (machine of machineArr) {
-        const divString = `<div>${machine}</div>`
+        console.log(machine.musclegroup)
+        console.log(getHTMLListFromArr(machine.musclegroup))
+        const divString =
+            `<div class="infobox">
+                   <h3>${machine.name}</h3>
+                   <p>difficulty: ${machine.difficulty}</p>
+                   <p>dangerlevel: ${machine.dangerlevel}</p>
+                   <p>dangerlevel: ${machine.dangerlevel}</p>
+                   ${getHTMLListFromArr(machine.musclegroup)}
+             </div>`
         htmlString = htmlString + divString
     }
+    console.log(htmlString)
     infoSectionDom.innerHTML = htmlString   //finally, we insert the htmlstring into the document
 }
 
@@ -52,10 +72,11 @@ function searchDBForMachines() {
         .then(jsondata => {
             console.log(jsondata)
             updateInfoTap(jsondata)
+
         })
 }
 
-document.querySelector('#searchButton').addEventListener('click', searchDBForMachines)
+document.querySelector('#searchButton').addEventListener('click',searchDBForMachines)
 
 function logThis() {
     console.log(getSearchbarContent())
