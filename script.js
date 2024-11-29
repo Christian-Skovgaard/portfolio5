@@ -66,6 +66,16 @@ function logThis () {
 
 
 
+function updateOneSelectedMachines () {
+
+}
+
+
+
+
+
+
+
 //Checkbox for machines functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Select all checkboxes and initialize the output variable
