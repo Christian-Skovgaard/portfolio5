@@ -1,4 +1,8 @@
 /*GLOBAL SETTINGS*/
+html, body {
+    max-height: 1000px;
+    overflow: hidden;
+}
 h1 {
     font: bold 30px/1.5 "Calibri";
     border-bottom: black 10px;
@@ -12,6 +16,16 @@ h1 {
 .selectedMachine {
     border: 2px solid black;
     background-color: red;
+    opacity: 50%;
+}
+#machineFilter {
+    width: 110px;
+}
+#toggleButton {
+    display: block;
+    margin: 0 0 10px 10px;
+    width: 90px;
+    border-radius: 10px;
 }
 
 
@@ -224,83 +238,287 @@ h1 {
 }
 
 /*CABLETOWER LOCATION-----------------------------------*/
-
-#cabletower {
+#cabletower1 {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 1670px;
+    left: 535px;
     width: 40px;
-    height: 18px;
+    height: 80px;
+}
+#cabletower2 {
+    position: relative;
+    bottom: 1470px;
+    left: 103px;
+    width: 40px;
+    height: 120px;
 }
 
-#handweight {
+/*HANDWEIGHT LOCATION-----------------------------------*/
+#handweight1 {
     position: relative;
-    bottom: 1000px;
-    left: px;
-    width: 40px;
-    height: 18px;
+    bottom: 1680px;
+    left: 207px;
+    width: 18px;
+    height: 40px;
+}
+#handweight2 {
+    position: relative;
+    bottom: 1724px;
+    left: 170px;
+    width: 18px;
+    height: 40px;
+}
+#handweight3 {
+    position: relative;
+    bottom: 1768px;
+    left: 60px;
+    width: 18px;
+    height: 40px;
+}
+#handweight4 {
+    position: relative;
+    bottom: 1812px;
+    left: 20px;
+    width: 18px;
+    height: 40px;
+}
+#handweight5 {
+    position: relative;
+    bottom: 1790px;
+    left: 207px;
+    width: 18px;
+    height: 40px;
+}
+#handweight6 {
+    position: relative;
+    bottom: 1834px;
+    left: 170px;
+    width: 18px;
+    height: 40px;
+}
+#handweight7 {
+    position: relative;
+    bottom: 1878px;
+    left: 60px;
+    width: 18px;
+    height: 40px;
+}
+#handweight8 {
+    position: relative;
+    bottom: 1922px;
+    left: 20px;
+    width: 18px;
+    height: 40px;
+}
+#handweight9 {
+    position: relative;
+    bottom: 1900px;
+    left: 60px;
+    width: 18px;
+    height: 40px;
+}
+#handweight10 {
+    position: relative;
+    bottom: 1944px;
+    left: 20px;
+    width: 18px;
+    height: 40px;
 }
 
+/*LEGPRESS LOCATION-----------------------------------*/
 #legpress {
     position: relative;
-    bottom: 1000px;
-    left: px;
-    width: 40px;
+    bottom: 1980px;
+    left: 448px;
+    width: 60px;
     height: 18px;
 }
 
-#stairwalker {
+/*STAIRWALKER LOCATION-----------------------------------*/
+#stairwalker1 {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 2090px;
+    left: 448px;
     width: 40px;
     height: 18px;
 }
-
-#skiing {
+#stairwalker2 {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 2140px;
+    left: 448px;
     width: 40px;
     height: 18px;
 }
-
-#bench {
+#stairwalker3 {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 2190px;
+    left: 448px;
+    width: 40px;
+    height: 18px;
+}
+#stairwalker4 {
+    position: relative;
+    bottom: 2240px;
+    left: 448px;
+    width: 40px;
+    height: 18px;
+}
+#stairwalker5 {
+    position: relative;
+    bottom: 2290px;
+    left: 448px;
     width: 40px;
     height: 18px;
 }
 
+/*SKIING LOCATION-----------------------------------*/
+#skiing1 {
+    position: relative;
+    bottom: 1992px;
+    left: 250px;
+    width: 18px;
+    height: 40px;
+}
+#skiing2 {
+    position: relative;
+    bottom: 2036px;
+    left: 220px;
+    width: 18px;
+    height: 40px;
+}
+#skiing3 {
+    position: relative;
+    bottom: 2080px;
+    left: 190px;
+    width: 18px;
+    height: 40px;
+}
+#skiing4 {
+    position: relative;
+    bottom: 2124px;
+    left: 160px;
+    width: 18px;
+    height: 40px;
+}
+#skiing5 {
+    position: relative;
+    bottom: 2168px;
+    left: 130px;
+    width: 18px;
+    height: 40px;
+}
+
+/*BENCH LOCATION-----------------------------------*/
+#bench1 {
+    position: relative;
+    bottom: 2340px;
+    left: 207px;
+    width: 18px;
+    height: 40px;
+}
+#bench2 {
+    position: relative;
+    bottom: 2384px;
+    left: 170px;
+    width: 18px;
+    height: 40px;
+}
+#bench3 {
+    position: relative;
+    bottom: 2360px;
+    left: 207px;
+    width: 18px;
+    height: 40px;
+}
+#bench4 {
+    position: relative;
+    bottom: 2404px;
+    left: 170px;
+    width: 18px;
+    height: 40px;
+}
+#bench5 {
+    position: relative;
+    bottom: 2448px;
+    left: 60px;
+    width: 18px;
+    height: 40px;
+}
+#bench6 {
+    position: relative;
+    bottom: 2492px;
+    left: 20px;
+    width: 18px;
+    height: 40px;
+}
+#bench7 {
+    position: relative;
+    bottom: 2476px;
+    left: 60px;
+    width: 18px;
+    height: 40px;
+}
+#bench8 {
+    position: relative;
+    bottom: 2520px;
+    left: 20px;
+    width: 18px;
+    height: 40px;
+}
+
+/*ABCRUNCH LOCATION-----------------------------------*/
 #abcrunch {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 3000px;
+    left: 621px;
     width: 40px;
     height: 18px;
 }
 
+/*CHESTPRESS LOCATION-----------------------------------*/
 #chestpress {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 2994px;
+    left: 621px;
     width: 40px;
     height: 18px;
 }
 
-#deadlift {
+/*DEADLIFT LOCATION-----------------------------------*/
+#deadlift1 {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 3120px;
+    left: 20px;
     width: 40px;
-    height: 18px;
+    height: 40px;
+}
+#deadlift2 {
+    position: relative;
+    bottom: 3164px;
+    left: 186px;
+    width: 40px;
+    height: 40px;
+}
+#deadlift3 {
+    position: relative;
+    bottom: 3158px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+}
+#deadlift4 {
+    position: relative;
+    bottom: 3202px;
+    left: 186px;
+    width: 40px;
+    height: 40px;
 }
 
+/*SEATEDROW LOCATION-----------------------------------*/
 #seatedrow {
     position: relative;
-    bottom: 1000px;
-    left: px;
+    bottom: 3190px;
+    left: 448px;
     width: 40px;
     height: 18px;
 }
