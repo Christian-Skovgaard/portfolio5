@@ -532,13 +532,19 @@ header>nav {
 }
 header>nav>section {
     width: 50%;
+
+}
+
+header>nav>#searchwindow>section>div {
+    width: 50%;
 }
 
 #searchwindow {
     display: flex;
 }
 #mucleFilter {
-    display: flex;
+    display: inline;
+    width: 50%;
 
 }
 

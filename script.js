@@ -1,3 +1,15 @@
+//make sure the backend is running
+fetch('http://localhost:3000/test').then(response => {
+    if (response) {
+        console.log('backend is responding')
+    }
+}).catch((error) => {
+    console.log(error);
+    alert('backend is not running')
+})
+
+
+
 // -- searchwindowmaker --
 function createSearchFilters (category,DOMElm) {
     let htmlSting = ''
@@ -14,6 +26,8 @@ function createSearchFilters (category,DOMElm) {
         })
 }
 
+
+//we make the two filters using the function we just made above
 const muscleFilterDOM = document.querySelector('#mucleFilter')
 createSearchFilters('musclegroup',muscleFilterDOM)
 const difficultyFilterDOM = document.querySelector('#difficultyFilter')
