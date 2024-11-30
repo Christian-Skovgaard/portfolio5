@@ -13,13 +13,13 @@
   },
   {
     "name": "kettlebell",
-    "musclegroup": ["thighs", "shoulders", "butt", "stomach", "chest"],
+    "musclegroup": ["thighs", "shoulders", "butt", "abs", "chest"],
     "difficulty": 2,
     "dangerlevel": 2
   },
   {
     "name": "cabletower",
-    "musclegroup": ["bicep", "tricep", "chest", "upper back", "lower back", "back", "shoulder","stomach", "thighs", "butt", "calves"],
+    "musclegroup": ["bicep", "tricep", "chest", "upper back", "lower back", "back", "shoulder","abs", "thighs", "butt", "calves"],
     "difficulty": 2,
     "dangerlevel": 2
   },
@@ -37,13 +37,13 @@
   },
   {
     "name": "stairwalker",
-    "musclegroup": ["thighs", "butt", "calves", "stomach"],
+    "musclegroup": ["thighs", "butt", "calves", "abs"],
     "difficulty": 1,
     "dangerlevel": 1
   },
   {
     "name": "skiing",
-    "musclegroup": ["thighs", "butt", "calves", "stomach", "shoulder"],
+    "musclegroup": ["thighs", "butt", "calves", "abs", "shoulder"],
     "difficulty": 1,
     "dangerlevel": 1
   },
@@ -55,7 +55,7 @@
   },
   {
     "name": "abcrunch",
-    "musclegroup": ["stomach", "lower back", "back"],
+    "musclegroup": ["abs", "lower back", "back"],
     "difficulty": 1,
     "dangerlevel": 1
   },
@@ -67,7 +67,7 @@
   },
   {
     "name": "deadlift",
-    "musclegroup": ["thighs", "shoulders", "butt", "stomach"],
+    "musclegroup": ["thighs", "shoulders", "butt", "abs"],
     "difficulty": 3,
     "dangerlevel": 3
   },

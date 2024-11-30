@@ -1,10 +1,10 @@
 /*GLOBAL SETTINGS*/
 html, body {
-    max-height: 1000px;
+    max-height: 1200px;
     overflow: hidden;
 }
 h1 {
-    font: bold 30px/1.5 "Calibri";
+    font: bold 50px/1.5 "Calibri";
     border-bottom: black 10px;
     padding: 10px;
     margin: 0 0 0 0;
@@ -26,6 +26,37 @@ h1 {
     margin: 0 0 10px 10px;
     width: 90px;
     border-radius: 10px;
+}
+#machineFilter, #difficultyFilter, #dangerFilter {
+    width: 110px;
+}
+
+
+
+
+header>nav {
+    display: flex;
+    justify-content: space-between;
+    height: 20vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
+}
+header>nav>section {
+    width: 50%;
+
+}
+header>nav>#searchwindow>section>div {
+    width: 50%;
+}
+#searchwindow {
+    display: flex;
+}
+
+#mainSection {
+    display: flex;
+}
+
+.infobox {
+    border-radius: 20%;
+    background-color: aliceblue;
 }
 
 
@@ -521,38 +552,4 @@ h1 {
     left: 448px;
     width: 40px;
     height: 18px;
-}
-
-
-
-header>nav {
-    display: flex;
-    justify-content: space-between;
-    height: 7vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
-}
-header>nav>section {
-    width: 50%;
-
-}
-
-header>nav>#searchwindow>section>div {
-    width: 50%;
-}
-
-#searchwindow {
-    display: flex;
-}
-#mucleFilter {
-    display: inline;
-    width: 50%;
-
-}
-
-#mainSection {
-    display: flex;
-}
-
-.infobox {
-    border-radius: 20%;
-    background-color: aliceblue;
 }
