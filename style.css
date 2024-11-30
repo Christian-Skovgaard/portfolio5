@@ -527,6 +527,19 @@ h1 {
 
 header>nav {
     display: flex;
+    justify-content: space-between;
+    height: 7vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
+}
+header>nav>section {
+    width: 50%;
+}
+
+#searchwindow {
+    display: flex;
+}
+#mucleFilter {
+    display: flex;
+
 }
 
 #mainSection {

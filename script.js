@@ -1,3 +1,25 @@
+// -- searchwindowmaker --
+function createSearchFilters (category,DOMElm) {
+    let htmlSting = ''
+    fetch(`http://localhost:3000/search/displayCategoryValues/${category}`).then(response => response.json())
+        .then(resultArr => {
+            for (item of resultArr) {
+                htmlSting = htmlSting +
+                    `<div>
+                        <input type="checkbox">
+                        <label>${item}</label>
+                    </div>`
+            }
+            DOMElm.innerHTML = htmlSting
+        })
+}
+
+const muscleFilterDOM = document.querySelector('#mucleFilter')
+createSearchFilters('musclegroup',muscleFilterDOM)
+const difficultyFilterDOM = document.querySelector('#difficultyFilter')
+createSearchFilters('difficulty',difficultyFilterDOM)
+
+
 // -- infoTab sidebar --
 function getHTMLListFromArr (arr) {
     //this function makes a ul-li list for html from an array so that it can be displayed on the document

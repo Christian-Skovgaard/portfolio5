@@ -27,15 +27,6 @@ app.get('/paramcheck/p1=:param1?;p2=:param2?', (req, res) => {
     console.log(reqObj)
 })
 
-app.get('/search/old/:name', (req, res) => {
-    //query is the querry we use to search in the findOne function and returns it to the client
-    const query = {name: `${req.params.name}`}
-    machines.findOne(query).then(machine => {
-        res.send(machine)
-        console.log(machine)
-    })
-})
-
 //this is the formatting functions. They format strings or arrays into objects that can be pushed to our $and-query. This makes it easy to add more filters in the future.
 function formatString (field, value) { return {[field]: value}}     //the squrebrackets is there because otherwise the key would just be called 'field', and not the varieble, field
 
@@ -70,13 +61,33 @@ app.get('/search/name=:name?;musclegroup=:musclegroup?;difficulty=:difficulty?',
         const formattedArr = formatArray('difficulty',difficultyArr)
         query.$and.push(formattedArr)
     }
-    machines.find(query).toArray().then(machine => {
+    machines.find(query).toArray().then(result => {
         console.log(query)
-        res.send(machine)
+        res.send(result)
     })
 })
 
-
+app.get('/search/displayCategoryValues/:category', (req, res) => {
+    //this endpoint gives all posible keyvalues of a specific key in the database, and is used to find all the relevant filters in the frontend search.
+    const valueArr = []
+    const key = req.params.category
+    console.log(key)
+    //we fetch the entire DB and then selects only the data we need from the objects and return them in a array
+    machines.find({}).toArray().then(result => {
+        for (machine of result) {
+            //we check if the keyvalue we check is an array
+            if (typeof machine[key] === 'object') {
+                for (index of machine[key]) {
+                    valueArr.push(index)
+                }
+            }
+            else {
+                valueArr.push(machine[key])
+            }
+        }
+        res.send(valueArr)
+    })
+})
 
 //userDB
 
