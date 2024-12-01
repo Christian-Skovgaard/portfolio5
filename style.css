@@ -550,10 +550,7 @@ header>nav>#searchwindow>section>div {
 #mainSection {
     display: flex;
 }
-.infobox {
-    border-radius: 20%;
-    background-color: aliceblue;
-}
+
 #machineDirectSearch>div {
     display: flex;
     justify-content: space-between;
@@ -564,7 +561,6 @@ header>nav>#searchwindow>section>div {
 #machineDirectSearch>div>button {
     margin: 5px;
 }
-
 #machineFilter {
     max-width: fit-content;
     display: flex;
@@ -573,7 +569,6 @@ header>nav>#searchwindow>section>div {
 }
 .machineSearchItem {
     width: 70px;
-
 }
 .machineSearchItem>p:hover {
     cursor: pointer;
@@ -584,4 +579,15 @@ header>nav>#searchwindow>section>div {
 }
 .selectedMachineFilter {
     background-color: aliceblue;
+}
+#infoTab {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.infobox {
+    border-radius: 5%;
+    border: grey;
+    background-color: aliceblue;
+    max-height: 500px;
 }
