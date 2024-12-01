@@ -528,20 +528,15 @@ h1 {
 header>nav {
     display: flex;
     justify-content: space-between;
-    height: 10vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
+    height: 7vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
 }
 header>nav>section {
     width: 50%;
 
 }
 
-header>nav>#searchwindow>#mucleFilter>div {
-    display: inline-block;
+header>nav>#searchwindow>section>div {
     width: 50%;
-}
-
-header>nav>#searchwindow>#difficultyFilter>div {
-    display: inline-block;
 }
 
 #searchwindow {
