@@ -34,6 +34,47 @@ const difficultyFilterDOM = document.querySelector('#difficultyFilter')
 createSearchFilters('difficulty',difficultyFilterDOM)
 
 
+//direct machineselector
+
+
+function createdirectMachineSearch () {
+    //this function created the direct search found in the right hand side of the navbar
+    //the first part is the same as the createFilter function, but here we have added more steps so it felt nice to have it here as well
+    const directMachineSearchDOM = document.querySelector('#machineFilter')
+    let htmlSting = ''
+    fetch(`http://localhost:3000/search/displayCategoryValues/name`).then(response => response.json())
+        .then(resultArr => {
+            for (item of resultArr) {
+                htmlSting = htmlSting +
+                    `<div class="machineSearchItem">
+                        <p>${item}</p>
+                    </div>`
+            }
+            directMachineSearchDOM.innerHTML = htmlSting
+
+            //new we add eventlistners to all of them that update the map
+            const machineSearchDOMDivArr = document.querySelectorAll('#machineFilter>div')
+            for (machineSearchDOMDiv of machineSearchDOMDivArr) {   //De her variablenavne kan et eller andet, ved ikke helt hvad
+                machineSearchDOMDiv.addEventListener('click', (event) => {
+                    console.log(`${event.target.textContent} was pressed`)
+                    if (!event.target.classList.contains('selectedMachineFilter')) {
+                        selectedMachineNamesArr.push(event.target.textContent)
+                        event.target.classList.add('selectedMachineFilter')
+                    }
+                    else {
+                        const indexOfMachineName = selectedMachineNamesArr.indexOf(event.target.textContent)
+                        selectedMachineNamesArr[indexOfMachineName] = undefined
+                        event.target.classList.remove('selectedMachineFilter')
+                    }
+                    updateSelectedMachines()
+                })
+            }
+        })
+}
+
+createdirectMachineSearch()
+
+
 // -- infoTab sidebar --
 function getHTMLListFromArr (arr) {
     //this function makes a ul-li list for html from an array so that it can be displayed on the document
@@ -68,7 +109,12 @@ function updateInfoTap(machineArr) {
 
 
 // -- map functionality --
-const selectedMachineNamesArr = []  //here we will have the names of all active machines that is selected on the map
+let selectedMachineNamesArr = []  //here we will have the names of all active machines that is selected on the map
+
+const resetMap = () => {
+    selectedMachineNamesArr = []
+    updateSelectedMachines()
+}
 
 const updateSelectedMachineNamesArrWithJasonData = (searchjson) => {    //this function-name might be a bit to long
     //this just takes the jason and puts it in the selectedMachineNamesArr, because it looks nicer to have it clear in the searchDB function
@@ -133,6 +179,7 @@ function searchDBForMachines() {
         .then(jsondata => {
             console.log(jsondata)
             updateInfoTap(jsondata)
+            resetMap()
             updateSelectedMachineNamesArrWithJasonData(jsondata)
             updateSelectedMachines()
         })

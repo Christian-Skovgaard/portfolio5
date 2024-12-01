@@ -67,7 +67,7 @@ app.get('/search/name=:name?;musclegroup=:musclegroup?;difficulty=:difficulty?',
     })
 })
 
-app.get('/search/displayCategoryValues/:category', (req, res) => {
+    app.get('/search/displayCategoryValues/:category', (req, res) => {
     //this endpoint gives all posible keyvalues of a specific key in the database, and is used to find all the relevant filters in the frontend search.
     const valueArr = []
     const key = req.params.category
