@@ -75,14 +75,18 @@ app.get('/search/displayCategoryValues/:category', (req, res) => {
     //we fetch the entire DB and then selects only the data we need from the objects and return them in a array
     machines.find({}).toArray().then(result => {
         for (machine of result) {
-            //we check if the keyvalue we check is an array
+            //we check if the keyvalue we check is an array and after we maek sure it is not a dublicate
             if (typeof machine[key] === 'object') {
                 for (index of machine[key]) {
-                    valueArr.push(index)
+                    if (!valueArr.includes(index)) {
+                        valueArr.push(index)
+                    }
                 }
             }
             else {
-                valueArr.push(machine[key])
+                if (!valueArr.includes(machine[key])) {
+                    valueArr.push(machine[key])
+                }
             }
         }
         res.send(valueArr)
