@@ -572,15 +572,15 @@ header>nav>#searchwindow>section>div {
     width: 40vw;
 }
 .machineSearchItem {
-    padding: 1vw;
     width: 70px;
 
 }
-.machineSearchItem:hover {
+.machineSearchItem>p:hover {
     cursor: pointer;
 }
 .machineSearchItem>p {
-    margin: 0px;
+    margin: 1vw;
+    padding: 1vw;
 }
 .selectedMachineFilter {
     background-color: aliceblue;
