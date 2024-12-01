@@ -527,12 +527,14 @@ h1 {
 
 header>nav {
     display: flex;
-    justify-content: space-between;
     min-height: 7vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
+    max-height: 15vw;
 }
 header>nav>section {
-    width: 70%;
     border: antiquewhite solid 2px;
+}
+#searchwindow {
+    width: 60vw;
 }
 header>nav>#searchwindow>section>div {
     min-width: 100px;
@@ -543,12 +545,43 @@ header>nav>#searchwindow>section>div {
 #mucleFilter {
     display: flex;
     flex-wrap: wrap;
-    width: 70vw;
+
 }
 #mainSection {
     display: flex;
 }
 .infobox {
     border-radius: 20%;
+    background-color: aliceblue;
+}
+#machineDirectSearch>div {
+    display: flex;
+    justify-content: space-between;
+}
+#machineDirectSearch>div>p {
+    margin: 5px;
+}
+#machineDirectSearch>div>button {
+    margin: 5px;
+}
+
+#machineFilter {
+    max-width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    width: 40vw;
+}
+.machineSearchItem {
+    padding: 1vw;
+    width: 70px;
+
+}
+.machineSearchItem:hover {
+    cursor: pointer;
+}
+.machineSearchItem>p {
+    margin: 0px;
+}
+.selectedMachineFilter {
     background-color: aliceblue;
 }
