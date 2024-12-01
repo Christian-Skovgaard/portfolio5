@@ -100,18 +100,18 @@ app.listen(port, ()=>{
 });
 
 
-//not relevant
+//not relevant - testcorner
 
-const trainingset = [
+const trainingset =
+
+[
     {
-        id: 1,
         name: "weights",
         musclegroup: ['arm','bicpts','wrist'],
         difficulty: "easy",
         dangerlevel: "minimal"
     },
     {
-        id: 2,
         name: "rowmachine",
         musclegroup: ['arm','bicpts','core','abs'],
         difficulty: "medium",

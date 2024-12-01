@@ -18,3 +18,9 @@ der er et html element til hver fitnessøvelse, som har et id som matcher det id
 - what to do
 færdige database
 html-kort færdigt
+
+Efter push med DB-arrayet er sendt
+- lav function som tager et array of navne på fitnessmaskiner og gør dem røde ved at opdaterer deres class
+- lave den der anden maskinsøgemaskine som vi også skal have af en eller anden grund, idk, den skal bare virke
+- evt få det der map til ikke at overflowe op i min søgebar!
+- man kunne se på at lave det om til et map-library som leaf som jeg troede vi gjorde i starten, men tror jeg ikke jeg når
