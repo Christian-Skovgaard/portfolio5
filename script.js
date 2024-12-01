@@ -120,7 +120,7 @@ function logThis() {
 
 //login functionality
 
-
+/*
 //Checkbox for machines functionality
 document.addEventListener('DOMContentLoaded', function () {
     // Select all checkboxes and initialize the output variable
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
     this.textContent = 'Show list of machines';
 }
 });
-
+*/
 
 
 

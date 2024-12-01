@@ -1,6 +1,6 @@
 /*GLOBAL SETTINGS*/
 html, body {
-    max-height: 1000px;
+    max-height: 200vw;
     overflow: hidden;
 }
 h1 {
@@ -528,30 +528,26 @@ h1 {
 header>nav {
     display: flex;
     justify-content: space-between;
-    height: 7vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
+    min-height: 7vw; /*I have just made it this number, and it can be changed if anybody ever reads this and or has an opinion on something at all*/
 }
 header>nav>section {
-    width: 50%;
-
+    width: 70%;
+    border: antiquewhite solid 2px;
 }
-
 header>nav>#searchwindow>section>div {
-    width: 50%;
+    min-width: 100px;
 }
-
 #searchwindow {
     display: flex;
 }
 #mucleFilter {
-    display: inline;
-    width: 50%;
-
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
 }
-
 #mainSection {
     display: flex;
 }
-
 .infobox {
     border-radius: 20%;
     background-color: aliceblue;
